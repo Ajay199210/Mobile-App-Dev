@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>{Your_API_Key}</string>
+	<key>GCM_SENDER_ID</key>
+	<string>252156049323</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.companyname.PlacesFavoris</string>
+	<key>PROJECT_ID</key>
+	<string>places-favoris</string>
+	<key>STORAGE_BUCKET</key>
+	<string>places-favoris.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+</dict>
+</plist>

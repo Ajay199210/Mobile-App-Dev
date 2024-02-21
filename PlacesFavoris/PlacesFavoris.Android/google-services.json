@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "252156049323",
+    "project_id": "places-favoris",
+    "storage_bucket": "places-favoris.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252156049323:android:f7ef1a257d011bf84b04ee",
+        "android_client_info": {
+          "package_name": "com.companyname.placesfavoris"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbvexOwmf3U72b6b3vk7KSagB-ROpYQ20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

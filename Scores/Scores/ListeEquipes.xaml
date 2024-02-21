@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Scores.ListeEquipes">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="AJOUTER ÉQUIPE" Clicked="ToolbarItemAjoutEquipe_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Columns Headers -->
+            <Grid Style="{StaticResource gridHeader}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width= "4*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Nom" Style="{StaticResource header}" />
+                <Label Grid.Row="0" Grid.Column="1" Text="P" Style="{StaticResource header}"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="GM" Style="{StaticResource header}" />
+                <Label Grid.Row="0" Grid.Column="3" Text="GR" Style="{StaticResource header}" />
+                <Label Grid.Row="0" Grid.Column="4" Text="Pts." Style="{StaticResource header}" />
+            </Grid>
+
+            <!-- Columns Data -->
+            <ListView x:Name="lstEquipes" ItemSelected="lstEquipes_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Nom}" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding NbTotalMatchs}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding TotalScores}" />
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding TotalScoresAdversaires}" />
+                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding NbTotalPoints}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

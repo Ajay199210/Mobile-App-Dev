@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UnitsConverter.StartupPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,25" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="titre">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="auteurs">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="version">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontAttributes" Value="Italic" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+            <Setter Property="CornerRadius" Value = "25" />
+            <Setter Property="Margin" Value="20,30,20,0" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label Text="Calculatrice sur mesure" Style="{StaticResource titre}"/>
+        <Label Text="Développé par Grp. Projet 1" Style="{StaticResource auteurs}" />
+        <Label Text="Version 1.0.0" Style="{StaticResource version}" />
+        <Button Text="Démarrer" Clicked="BtnStartup_Clicked" />
+    </StackLayout>
+</ContentPage>

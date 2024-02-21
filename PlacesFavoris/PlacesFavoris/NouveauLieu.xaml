@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlacesFavoris.NouveauLieu">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Nouveau lieu" Style="{StaticResource title}" x:Name="titrePage" />
+                <Label Text="Nom" />
+                <Entry Placeholder="Nom" x:Name="txtNomPlace" />
+                <Label Text="Adresse" />
+                <Entry Placeholder="Adresse" x:Name="txtAdresse" />
+                <Label Text="Catégorie" />
+                <Picker x:Name="pickCategorie" />
+                <Label Text="Coordonnées" Style="{StaticResource subtitle}" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Row="0" Grid.Column="0" Placeholder="Latitude" Keyboard="Numeric" x:Name="txtLatitude" />
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="Longitude" Keyboard="Numeric" x:Name="txtLongitude" />
+                </Grid>
+                <Button Text="Enregistrer" Clicked="BtnEnregistrer_Clicked" />
+                <Button Text="Supprimer" Clicked="BtnSupprimer_Clicked" 
+                        x:Name="btnSupprimer" IsVisible="false" Style="{StaticResource deleteButton}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

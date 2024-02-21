@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Scores.NouveauMatch">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Home" />
+            <Picker x:Name="pickEquipeHome" />
+            <Label Text="Away" />
+            <Picker x:Name="pickEquipeAway" />
+            <Label Text="Score" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Row="0" Grid.Column="0" x:Name="scoreHome" Placeholder="ScoreHome" Keyboard="Numeric" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="scoreAway" Placeholder="ScoreAway" Keyboard="Numeric" />
+            </Grid>
+            <Label Text="Date" />
+            <DatePicker x:Name="pickDateMatch" />
+            <Button Text="ENREGISTRER" x:Name="btnAjoutMatch" Clicked="BtnNouveauMatch_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

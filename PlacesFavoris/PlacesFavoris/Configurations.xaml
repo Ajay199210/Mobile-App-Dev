@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlacesFavoris.Configurations">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Configurations" Style="{StaticResource title}"/>
+                <Grid Style="{StaticResource gridConfig}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Places connus" />
+                    <Switch Grid.Row="0" Grid.Column="1" IsToggled="True" 
+                            Toggled="OnToggled_PlacesConnues" x:Name="switchPlacesConnues" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Places souhaitées" HorizontalOptions="Start" />
+                    <Switch Grid.Row="1" Grid.Column="1" IsToggled="True" 
+                            Toggled="OnToggled_PlacesSouhaitees" x:Name="switchPlacesSouhaitees" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Places visités" />
+                    <Switch Grid.Row="2" Grid.Column="1" IsToggled="True" 
+                            Toggled="OnToggled_PlacesVisitees" x:Name="switchPlacesVisitees" />
+                </Grid>
+                <Label Text="Degré de localisation de carte" Style="{StaticResource subtitle}" />
+                <Label Text="Latitude" />
+                <Entry Keyboard="Numeric" Text="0.01" x:Name="degreLatitude" Unfocused="DegreLatitude_Unfocused" />
+
+                <Label Text="Longitude" />
+                <Entry Keyboard="Numeric" Text="0.01" x:Name="degreLongitude" Unfocused="DegreLongitude_Unfocused" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

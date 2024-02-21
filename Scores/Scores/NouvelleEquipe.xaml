@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Scores.NouvelleEquipe">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nom" />
+            <Entry Placeholder="Nom de l'équipe" x:Name="txtNomEquipe" />
+            <Label Text="Description" />
+            <Editor Placeholder="Description de l'équipe" />
+            <Button Text="ENREGISTRER" x:Name="btnAjoutEquipe" Clicked="BtnNouvelleEquipe_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

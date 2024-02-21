@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Scores.ListeMatchsEquipe"
+             Title="Equipe">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Columns Headers -->
+            <Grid Style="{StaticResource gridHeader}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Équipes" Style="{StaticResource header}" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Scores" Style="{StaticResource header}"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Date" Style="{StaticResource header}" />
+            </Grid>
+
+            <!-- Columns Data -->
+            <ListView x:Name="lstMatchsEquipes">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="1.5*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding NomEquipeHome}" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding ScoreEquipeHome}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding DateMatch, StringFormat='{}{0:dd MMM yyyy}'}" />
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding NomEquipeAway}" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding ScoreEquipeAway}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

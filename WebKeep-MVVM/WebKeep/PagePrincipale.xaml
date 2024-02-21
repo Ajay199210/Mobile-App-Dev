@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebKeep.PagePrincipale"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:vm="clr-namespace:WebKeep.ViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:PagePrincipaleViewModel x:Key="vm" />
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+            <Style TargetType="ListView">
+                <Setter Property="Margin" Value="20,25,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Command="{Binding Source={StaticResource vm}, Path=NouveauSiteCommande}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource vm}">
+
+            <!--https://stackoverflow.com/questions/67680279/xamarin-forms-textchanged-event-to-mvvm-->
+
+            <Entry Placeholder="Recherche" Text="{Binding SearchTerm}" Style="{StaticResource recherche}" >
+                <Entry.Behaviors>
+                    <xct:EventToCommandBehavior
+                        EventName="TextChanged"
+                        Command="{Binding RechercherSitesCommande}" />
+                </Entry.Behaviors>
+            </Entry>
+
+            <ListView x:Name="listeSites" ItemsSource="{Binding ListeSites}" SelectedItem="{Binding SiteChoisi}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Nom}" />
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Lien}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding DateCreation, StringFormat='{0:dd MMM yyyy}'}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

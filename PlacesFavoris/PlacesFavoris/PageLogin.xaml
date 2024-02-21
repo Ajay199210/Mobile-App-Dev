@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlacesFavoris.PageLogin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Places Favoris" Style="{StaticResource title}" />
+                <Label Text="Adresse courriel" />
+                <Entry Placeholder="Adresse courriel" x:Name="txtAdresseCourriel" Keyboard="Email" />
+                <Label Text="Mot de passe" />
+                <Entry Placeholder="Mot de passe" IsPassword="True" x:Name="txtMotDePasse" />
+                <Button Text="connexion" Clicked="BtnConnexion_Clicked" />
+                <Button Text="Nouveau compte" Clicked="BtnNouveauCompte_Clicked" Style="{StaticResource secondaryButton}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UnitsConverter.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BackgroundColor">#505050</Color>
+            <Color x:Key="PrimaryColor">#1C1C1C</Color>
+            <Color x:Key="SecondaryColor">#D4D4D2</Color>
+            <Color x:Key="OutputBackroundColor">#B9D9EB</Color>
+            <Color x:Key="ConversionColor">#FF9500</Color>
+            <Color x:Key="DeleteButtonColor">Brown</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

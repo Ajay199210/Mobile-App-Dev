@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebKeep.App">
+    <Application.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#373737" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="WhiteSmoke" />
+            <Setter Property="Margin" Value="25,15,25,0" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style TargetType="Label" x:Key="appTitle">
+            <Setter Property="TextColor" Value="WhiteSmoke" />
+            <Setter Property="FontSize" Value="35" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+        <Style TargetType="Label" x:Key="appSubtitle">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Italic" />
+        </Style>
+        <Style TargetType="Label" x:Key="titrePage">
+            <Setter Property="TextColor" Value="WhiteSmoke" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,50,0,25" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="DarkGray" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+        </Style>
+        <Style TargetType="Entry" x:Key="recherche">
+            <Setter Property="BackgroundColor" Value="DarkGray" />
+            <Setter Property="Margin" Value="20,25,20,0" />
+        </Style>
+        <Style TargetType="Editor">
+            <Setter Property="BackgroundColor" Value="DarkGray" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+            <Setter Property="HeightRequest" Value="100" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="DarkGray" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Yellow" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="TextTransform" Value="Uppercase" />
+            <Setter Property="Margin" Value="25,45,25,0" />
+            <Setter Property="CornerRadius" Value="3" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        <Style TargetType="Button" x:Key="secondaryButton">
+            <Setter Property="BackgroundColor" Value="#373737" />
+            <Setter Property="TextColor" Value="Yellow" />
+            <Setter Property="TextTransform" Value="Uppercase" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontAttributes" Value="None" />
+        </Style>
+        <Style TargetType="Button" x:Key="deleteButton">
+            <Setter Property="BackgroundColor" Value="DarkRed" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="TextTransform" Value="Uppercase" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+    </Application.Resources>
+</Application>

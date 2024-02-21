@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UnitsConverter.Main">
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid" x:Key="output">
+            <Setter Property="Margin" Value="12,25,12,25" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="BackgroundColor" Value="{StaticResource OutputBackroundColor}" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Padding" Value="10,10,10,10" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="CornerRadius" Value="25" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="delete">
+            <Setter Property="BackgroundColor" Value="{StaticResource DeleteButtonColor}" />
+            <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+            <Setter Property="Padding" Value="5,2,5,2"/>
+            <Setter Property="Margin" Value="12,10,12,10"/>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="CornerRadius" Value="25" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="conversion">
+            <Setter Property="BackgroundColor" Value="{StaticResource ConversionColor}" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="Padding" Value="5,2,5,2"/>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="BorderColor" Value="{StaticResource BackgroundColor}" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+        <Style TargetType="Grid" x:Key="mesures">
+            <Setter Property="Margin" Value="12,25,12,10"/>
+        </Style>
+
+        <Style TargetType="Grid" x:Key="keypad">
+            <Setter Property="Margin" Value="12,25,12,10"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <!--Section 1 & 2-->
+            <Grid Style="{StaticResource output}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="2.5*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="" Grid.Row="0" Grid.Column="0" x:Name="mesureFrom" />
+                <Label Text="" Grid.Row="0" Grid.Column="1" x:Name="valeurFrom" />
+
+                <Label Text="" Grid.Row="1" Grid.Column="0" x:Name="mesureTo" />
+                <Label Text="" Grid.Row="1" Grid.Column="1" x:Name="valeurTo" />
+            </Grid>
+
+            <!--Section 5-->
+            <Button Text="EFFACER" Clicked="DeleteKey_Clicked" Style="{StaticResource delete}"/>
+
+            <!--Section 3-->
+            <Grid Style="{StaticResource mesures}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="CM > POUCE" Grid.Row="0" Grid.Column="0" Clicked="ConversionKey_CM_POUCE_Clicked" 
+                            Style="{StaticResource conversion}" />
+                <Button Text="POUCE > CM" Grid.Row="1" Grid.Column="0" Clicked="ConversionKey_POUCE_CM_Clicked" 
+                            Style="{StaticResource conversion}" />
+
+                <Button Text="M > PIED" Grid.Row="0" Grid.Column="1" Clicked="ConversionKey_M_PIED_Clicked" 
+                            Style="{StaticResource conversion}" />
+                <Button Text="PIED > M" Grid.Row="1" Grid.Column="1" Clicked="ConversionKey_PIED_M_Clicked" 
+                            Style="{StaticResource conversion}" />
+
+                <Button Text="G > ONCE" Grid.Row="0" Grid.Column="2" Clicked="ConversionKey_G_ONCE_Clicked" 
+                            Style="{StaticResource conversion}" />
+                <Button Text="ONCE > G" Grid.Row="1" Grid.Column="2" Clicked="ConversionKey_ONCE_G_Clicked" 
+                            Style="{StaticResource conversion}" />
+
+                <Button Text="KG > LB" Grid.Row="0" Grid.Column="3" Clicked="ConversionKey_KG_LB_Clicked" 
+                            Style="{StaticResource conversion}" />
+                <Button Text="LB > KG" Grid.Row="1" Grid.Column="3" Clicked="ConversionKey_LB_KG_Clicked" 
+                            Style="{StaticResource conversion}" />
+            </Grid>
+
+            <!--Section 4-->
+            <Grid Style="{StaticResource keypad}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="7" Grid.Row="0" Grid.Column="0" Clicked="NumKey_Clicked" />
+                <Button Text="8" Grid.Row="0" Grid.Column="1" Clicked="NumKey_Clicked" />
+                <Button Text="9" Grid.Row="0" Grid.Column="2" Clicked="NumKey_Clicked" />
+
+                <Button Text="4" Grid.Row="1" Grid.Column="0" Clicked="NumKey_Clicked" />
+                <Button Text="5" Grid.Row="1" Grid.Column="1" Clicked="NumKey_Clicked" />
+                <Button Text="6" Grid.Row="1" Grid.Column="2" Clicked="NumKey_Clicked" />
+
+                <Button Text="1" Grid.Row="2" Grid.Column="0" Clicked="NumKey_Clicked" />
+                <Button Text="2" Grid.Row="2" Grid.Column="1" Clicked="NumKey_Clicked" />
+                <Button Text="3" Grid.Row="2" Grid.Column="2" Clicked="NumKey_Clicked" />
+
+                <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="NumKey_Clicked" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
